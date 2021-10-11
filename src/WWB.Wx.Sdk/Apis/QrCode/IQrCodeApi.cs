@@ -1,4 +1,4 @@
-﻿using System.Net.Http;
+﻿using System.IO;
 using System.Threading.Tasks;
 using WebApiClientCore.Attributes;
 using WWB.Wx.Sdk.Apis.QrCode.Dtos;
@@ -14,6 +14,6 @@ namespace WWB.Wx.Sdk.Apis.QrCode
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("getwxacodeunlimit")]
-        Task<HttpResponseMessage> GetwxacodeUnlimit([JsonNetContent] GetWxacodeUnlimitRequest request);
+        Task<Stream> GetwxacodeUnlimit([JsonNetContent] GetWxacodeUnlimitRequest request);
     }
 }
