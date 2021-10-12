@@ -1,18 +1,19 @@
-﻿using WWB.Wx.Sdk.Apis;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Caching.Distributed;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Text;
+using WWB.Wx.Sdk.Apis;
 using WWB.Wx.Sdk.Apis.CustomerService;
 using WWB.Wx.Sdk.Apis.Media;
 using WWB.Wx.Sdk.Apis.Menu;
 using WWB.Wx.Sdk.Apis.Message;
+using WWB.Wx.Sdk.Apis.QrCode;
 using WWB.Wx.Sdk.Apis.Sns;
 using WWB.Wx.Sdk.Apis.Token;
 using WWB.Wx.Sdk.Apis.User;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using System;
 using WWB.Wx.Sdk.ServerMessages;
-using Microsoft.Extensions.Caching.Distributed;
-using System.Text;
 
 namespace WWB.Wx.Sdk
 {
@@ -40,6 +41,7 @@ namespace WWB.Wx.Sdk
             services.AddHttpApi<IMediaApi>();
             services.AddHttpApi<IUserApi>();
             services.AddHttpApi<ITagsApi>();
+            services.AddHttpApi<IQrCodeApi>();
             return services;
         }
 
