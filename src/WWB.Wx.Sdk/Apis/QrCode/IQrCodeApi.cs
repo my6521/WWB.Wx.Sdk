@@ -6,7 +6,7 @@ using WWB.Wx.Sdk.Apis.QrCode.Dtos;
 namespace WWB.Wx.Sdk.Apis.QrCode
 {
     [HttpHost("https://api.weixin.qq.com/wxa/")]
-    public interface IQrCodeApi : IWxApiWithAccessTokenFilter
+    public interface IQrCodeApi : IWxApiBase
     {
         /// <summary>
         /// 小程序一物一码
@@ -14,6 +14,6 @@ namespace WWB.Wx.Sdk.Apis.QrCode
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost("getwxacodeunlimit")]
-        Task<Stream> GetwxacodeUnlimit([JsonNetContent] GetWxacodeUnlimitRequest request);
+        Task<Stream> GetwxacodeUnlimit([PathQuery] string access_token, [JsonNetContent] GetWxacodeUnlimitRequest request);
     }
 }
