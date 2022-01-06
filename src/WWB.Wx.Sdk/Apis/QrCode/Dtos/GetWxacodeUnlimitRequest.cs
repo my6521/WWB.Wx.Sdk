@@ -8,5 +8,7 @@
         public bool auto_color { get; set; }
         public object line_color { get; set; }
         public bool is_hyaline { get; set; }
+        public bool check_path { get; set; } = false;
+        public string env_version { get; set; } = "release";
     }
 }
