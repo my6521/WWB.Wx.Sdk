@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WWB.Wx.Sdk;
+using WWB.Wx.Sdk.AspNet;
 
 namespace Demo.Api
 {

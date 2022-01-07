@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>netstandard2.1</TargetFramework>
+	  <PackageId>WWB.Wx.Sdk.AspNet</PackageId>
+	  <Version>1.0.6</Version>
+	  <Authors>my6521</Authors>
+	  <Description>NetCore封装微信公众号和小程序API，开箱即用。</Description>
+	  <PackageLicenseExpression>MIT</PackageLicenseExpression>
+	  <RepositoryUrl>https://github.com/my6521/WWB.Wx.Sdk</RepositoryUrl>
+	  <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+  </PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
+	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WWB.Wx.Sdk\WWB.Wx.Sdk.csproj" />
+  </ItemGroup>
+
+</Project>

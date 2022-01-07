@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\src\WWB.Wx.Sdk.AspNet\WWB.Wx.Sdk.AspNet.csproj" />
     <ProjectReference Include="..\..\src\WWB.Wx.Sdk\WWB.Wx.Sdk.csproj" />
   </ItemGroup>
 

@@ -30,4 +30,6 @@ jobs:
     - name: 发布生成包到github和nuget
       run: |
         nuget push ./src/WWB.Wx.Sdk/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NUGETKEY }} -NoSymbols
+        nuget push ./src/WWB.Wx.Sdk.AspNet/bin/Release/*.nupkg -Source https://api.nuget.org/v3/index.json -SkipDuplicate -ApiKey ${{ secrets.NUGETKEY }} -NoSymbols
         nuget push ./src/WWB.Wx.Sdk/bin/Release/*.nupkg -Source github -SkipDuplicate
+        nuget push ./src/WWB.Wx.Sdk.AspNet/bin/Release/*.nupkg -Source github -SkipDuplicate
