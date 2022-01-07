@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WWB.Wx.Sdk;
 using WWB.Wx.Sdk.AspNet;
+using WWB.Wx.Sdk.AspNet.ServerMessages;
 
 namespace Demo.Api
 {
@@ -20,7 +21,10 @@ namespace Demo.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddWxSdk().AddDistributedMemoryCache();
+            services.AddSingleton<IWxEventsHandler, TestWxEventsHandler>();
+            services.AddWxSdk()
+                .AddDistributedMemoryCache()
+                .AddServerMessageHandler(); ;
 
             services.AddControllers();
         }
@@ -33,7 +37,17 @@ namespace Demo.Api
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseWxSdk().UseWxDistributedCacheForAccessToken();
+            app.UseWxSdk(setup =>
+            {
+                setup.GetWeChatOptions = () =>
+                {
+                    return new WxPublicAccountOption()
+                    {
+                        AppId = "",
+                        AppSecret = ""
+                    };
+                };
+            }).UseWxDistributedCacheForAccessToken();
 
             app.UseRouting();
 
